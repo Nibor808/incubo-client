@@ -30,7 +30,6 @@ $input-inset-shadow2: rgba(0, 0, 0, 0.05);
 @import './header';
 @import './about';
 @import './portfolio';
-@import './contact';
 @import './buttons_inputs';
 
 /* -------------- FORMATTING -------------- */
@@ -41,18 +40,20 @@ body {
 
 body {
     padding: 0;
-    margin: 0;
 }
 
 .container-fluid {
     padding: 1.875em 0 0 0;
     position: relative;
     min-height: 100%;
-    height: auto !important;
 }
 
 .container {
     max-width: 1140px;
+}
+
+.landing {
+    padding-bottom: 40px;
 }
 
 ul {
@@ -63,6 +64,14 @@ ul {
 .sidebar {
     display: flex;
     justify-content: flex-start;
+}
+
+.contact > .row > .col-12.cta {
+    display: flex;
+    & >  a.social-link {
+        padding-left: 20px;
+    }
+
 }
 
 /* -------------- COLORS -------------- */
@@ -256,16 +265,6 @@ button.nav-link {
                 }
             }
         }
-
-        .contact {
-            .contact-container {
-                margin-left: 15px;
-
-                .sidebar {
-                    padding: 0;
-                }
-            }
-        }
     }
 }
 
@@ -303,58 +302,14 @@ button.nav-link {
     }
 }
 
-@media screen and (min-width: 360px) {
-    .contact {
-        padding-bottom: 20px;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .contact {
-        padding-bottom: 240px;
-    }
-}
-
 @media screen and (min-width: 1024px) {
-    .contact {
-        padding-bottom: 0;
-    }
-
     .mode-icon {
         margin-right: 8px;
     }
 }
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .contact {
-        padding-bottom: 30px;
-    }
-
-    @media screen and (min-width: 768px) {
-        .contact {
-            padding-bottom: 250px;
-        }
-    }
-
-    @media screen and (min-width: 1024px) {
-        .contact {
-            padding-bottom: 0;
-        }
-    }
-}
-
 @media screen and (min-width: 1280px) {
-    .contact {
-        padding-bottom: 30px;
-    }
-
     .mode-icon {
         margin-right: 0;
-    }
-}
-
-@media screen and (min-width: 1600px) {
-    .contact {
-        padding-bottom: 200px;
     }
 }

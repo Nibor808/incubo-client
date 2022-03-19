@@ -15,7 +15,7 @@ export const list2016: Item[] = [
                 href="https://itunes.apple.com/ca/app/+3/id1095135903?mt=8"
                 target={'_blank'}
                 rel="noopener noreferrer"
-                className="img-link">
+                className="social-link">
                 <img src={appStoreBadge} id="badge" className="img-fluid" alt="app store badge" />
             </a>
         ),

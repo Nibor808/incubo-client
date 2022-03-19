@@ -6,13 +6,13 @@ import {MyLink} from './MyLink';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faMoon, faSun} from '@fortawesome/free-solid-svg-icons';
 
-type HeaderProps = {
+interface HeaderProps {
     toPortfolio: (ev: React.MouseEvent<HTMLButtonElement>) => void;
     toContact: (ev: React.MouseEvent<HTMLButtonElement>) => void;
     toTop: (ev: React.MouseEvent<HTMLImageElement, MouseEvent>) => void;
-};
+}
 
-const Header = ({toPortfolio, toContact, toTop}: HeaderProps) => {
+export const Header: React.FC<HeaderProps> = ({toPortfolio, toContact, toTop}) => {
     const [darkMode, setDarkMode] = useState<boolean>(false);
     const [modeIcon, setModeIcon] = useState<JSX.Element>(<FontAwesomeIcon icon={faSun} />);
     const width = window.innerWidth;
@@ -79,7 +79,7 @@ const Header = ({toPortfolio, toContact, toTop}: HeaderProps) => {
                                 <MyLink
                                     title={<img src={linkedIn} alt="Robin Erickson linkedIn" />}
                                     href="https://www.linkedin.com/in/robinerickson08/"
-                                    klass="img-link"
+                                    klass="social-link"
                                 />
                             </div>
 
@@ -104,5 +104,3 @@ const Header = ({toPortfolio, toContact, toTop}: HeaderProps) => {
         </header>
     );
 };
-
-export default Header;

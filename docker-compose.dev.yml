@@ -9,6 +9,8 @@ services:
     volumes:
       - /app/node_modules
       - ./client:/app
+    env_file:
+      - ./client/.env
 
   nginx:
     depends_on:
@@ -18,4 +20,4 @@ services:
       dockerfile: Dockerfile.dev
       context: ./nginx
     ports:
-      - 3000:80
+      - "3000:80"

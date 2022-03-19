@@ -1,4 +1,4 @@
-a:not(.img-link) {
+a:not(.social-link) {
     padding: 0;
     border: none;
     background: none;
@@ -29,7 +29,7 @@ a:not(.img-link) {
     }
 }
 
-button:not(.nav-link) {
+button.navbar-toggler {
     box-shadow: $boxShadowSm;
     background: $blueText;
     color: $white;
@@ -75,21 +75,6 @@ button.nav-link {
     }
 }
 
-input[type='text'],
-input[type='email'],
-textarea.form-control {
-    border: 1px solid $input-grey;
-    background: linear-gradient(to bottom, $input-gradient-white 0%, $white 100%);
-    border-radius: $borderRadius;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    box-shadow: 0 1px 2px $input-inset-shadow1 inset, 0 -1px 0 $input-inset-shadow2 inset;
-    transition: all 0.2s linear;
-
-    &:focus,
-    &.active {
-        border: 1px solid $lightBlue !important;
-        outline: none !important;
-        box-shadow: none !important;
-    }
+#dark-light-toggle:hover {
+    cursor: pointer;
 }

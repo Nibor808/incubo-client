@@ -1,12 +1,13 @@
 import React, {useEffect, useRef, useState} from 'react';
-import Header from './Header';
+import {Header} from './Header';
 import About from './About';
-import Contact from './Contact';
 import PortfolioList from './PortfolioList';
 import {list2016} from '../utils/list_2016';
 import {list2017} from '../utils/list_2017';
 import {list2020} from '../utils/list_2020';
 import Modal from './Modal';
+import linkedIn from '../styles/images/linkedin.jpg';
+import {MyLink} from './MyLink';
 
 const App: React.FC = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -99,7 +100,7 @@ const App: React.FC = () => {
     return (
         <React.Fragment>
             {showModal()},
-            <Header key="a2" toContact={toContact} toPortfolio={toPortfolio} toTop={toTop} />,
+            <Header key="a2" toContact={toContact} toPortfolio={toPortfolio} toTop={toTop} />
             <section key="a3" className="landing container">
                 <article className="about">
                     <div className="about-container">
@@ -149,17 +150,20 @@ const App: React.FC = () => {
                 </article>
 
                 <article className="contact" ref={contactRef} data-testid="contact">
-                    <div className="header-container">
-                        <div className="row">
-                            <div className="col-12">
-                                <h1>Contact</h1>
-                                <p>Want to work together? Get in touch!</p>
-                            </div>
+                    <div className="row">
+                        <div className="col-12">
+                            <h1>Contact</h1>
                         </div>
                     </div>
-
-                    <div className="contact-container">
-                        <Contact />
+                    <div className="row">
+                        <div className="col-12 cta">
+                            <p>Want to work together? Get in touch!</p>
+                            <MyLink
+                                title={<img src={linkedIn} alt="Robin Erickson linkedIn" />}
+                                href="https://www.linkedin.com/in/robinerickson08/"
+                                klass="social-link"
+                            />
+                        </div>
                     </div>
                 </article>
             </section>
