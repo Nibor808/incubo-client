@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 
-export type ModalProps = {
+export interface ModalProps {
     isOpen: boolean;
     setIsOpen: (arg: boolean) => void;
     headerText: string | undefined;
     srcText: string | undefined;
-};
+}
 
 const ModalStyle = {
     overlay: {
@@ -33,7 +33,7 @@ const ModalStyle = {
     },
 };
 
-const Modal: React.FC<ModalProps> = ({isOpen, setIsOpen, headerText, srcText}: ModalProps) => {
+export const Modal: React.FC<ModalProps> = ({isOpen, setIsOpen, headerText, srcText}) => {
     return (
         <ReactModal
             appElement={document.getElementById('root') as HTMLElement}
@@ -54,5 +54,3 @@ const Modal: React.FC<ModalProps> = ({isOpen, setIsOpen, headerText, srcText}: M
         </ReactModal>
     );
 };
-
-export default Modal;

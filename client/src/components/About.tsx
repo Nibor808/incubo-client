@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import moment from 'moment';
 import robin from '../styles/images/robin-head.jpeg';
 
-type TimeVals = {
+type TimeValues = {
     years: number;
     months: number;
     days: number;
@@ -11,8 +11,8 @@ type TimeVals = {
     seconds: number;
 };
 
-const About = () => {
-    const [time, setTime] = useState<TimeVals>({
+export const About = () => {
+    const [time, setTime] = useState<TimeValues>({
         years: 0,
         months: 0,
         days: 0,
@@ -67,22 +67,15 @@ var STATS = {
     };
 
     return (
-        <div className="row">
-            <div className="col-sm-12 col-md-10 col-xl-8 top-box">
-                <div className="img-box">
-                    <img src={robin} alt="me" height="300px" width="300px" className="img-fluid" />
-                    <h2>Robin Erickson</h2>
-                    <p>software developer</p>
-                </div>
-
-                <span dangerouslySetInnerHTML={{__html: renderInfoDisplay()}} />
-            </div>
-
-            <div className="col-sm-10 bottom-box">
+        <div className="top-box d-flex align-items-center justify-content-between">
+            <div className="d-flex align-items-center flex-column">
+                <img src={robin} alt="me" height="350px" width="350px" className="img-fluid" />
+                <h2>Robin Erickson</h2>
+                <p>software developer</p>
                 <p>Exploring technology one language at a time.</p>
             </div>
+
+            <span dangerouslySetInnerHTML={{__html: renderInfoDisplay()}} />
         </div>
     );
 };
-
-export default About;

@@ -1,5 +1,5 @@
 .portfolio {
-    padding: 120px 0 100px 0;
+    padding: 210px 0 100px 0;
 
     .header-container {
         padding: 0;
@@ -32,11 +32,6 @@
         .portfolio-item {
             margin-bottom: 80px;
             margin-left: 20px;
-
-            .portfolio-item-head {
-                display: flex;
-                align-items: center;
-            }
 
             img:not(#badge) {
                 box-shadow: $boxShadowSm;

@@ -9,7 +9,7 @@ type EBState = {
     errorInfo: ErrorInfo | null;
 };
 
-class ErrorBoundary extends React.Component<EBProps, EBState> {
+export class ErrorBoundary extends React.Component<EBProps, EBState> {
     public state: EBState = {error: null, errorInfo: null};
 
     public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
@@ -31,5 +31,3 @@ class ErrorBoundary extends React.Component<EBProps, EBState> {
         return this.props.children;
     }
 }
-
-export default ErrorBoundary;

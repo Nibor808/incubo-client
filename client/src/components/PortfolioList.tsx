@@ -1,19 +1,22 @@
 import React from 'react';
-import PortfolioItem, {Item} from './PortfolioItem';
+import {Item, PortfolioItem} from './PortfolioItem';
 
-type PortfolioListProps = {
+interface PortfolioListProps {
     handleClick: React.FormEventHandler;
     year: string;
     list: Item[];
     sideBarName: string;
-};
+}
 
-const PortfolioList = ({handleClick, year, list, sideBarName}: PortfolioListProps) => {
-    const klass = `col-sm-2 col-md-1 ${sideBarName}`;
-
+export const PortfolioList: React.FC<PortfolioListProps> = ({
+    handleClick,
+    year,
+    list,
+    sideBarName,
+}) => {
     return (
         <div className="row" data-testid={`${year}-list`}>
-            <div className={klass}>
+            <div className={`col-sm-2 col-md-1 ${sideBarName}`}>
                 <p>{year}</p>
             </div>
 
@@ -29,5 +32,3 @@ const PortfolioList = ({handleClick, year, list, sideBarName}: PortfolioListProp
         </div>
     );
 };
-
-export default PortfolioList;

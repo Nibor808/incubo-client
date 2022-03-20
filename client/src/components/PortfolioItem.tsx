@@ -1,25 +1,25 @@
 import React from 'react';
-import {Link} from './MyLink';
+import {MyLink} from './MyLink';
 
-type PortfolioItemProps = {
+interface PortfolioItemProps {
     handleClick: React.FormEventHandler;
     item: Item;
-};
+}
 
-export type Item = {
+export interface Item {
     title: string;
     badgeIcon?: JSX.Element | undefined;
-    github?: Link | string | Element | JSX.Element;
+    github?: MyLink | string | Element | JSX.Element;
     text?: () => JSX.Element[] | JSX.Element;
     image?: (handleClick: React.MouseEventHandler) => Element | JSX.Element;
-};
+}
 
-const PortfolioItem: React.FC<PortfolioItemProps> = ({handleClick, item}: PortfolioItemProps) => {
+export const PortfolioItem: React.FC<PortfolioItemProps> = ({handleClick, item}) => {
     const {title, badgeIcon, github, text, image} = item;
 
     return (
         <div className="portfolio-item">
-            <div className="portfolio-item-head">
+            <div className="d-flex align-items-center">
                 <h3>
                     <strong>{title}</strong>
                 </h3>
@@ -32,5 +32,3 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({handleClick, item}: Portfo
         </div>
     );
 };
-
-export default PortfolioItem;

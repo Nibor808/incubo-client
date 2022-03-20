@@ -15,24 +15,13 @@ html {
 body {
     font-family: quicksand, sans-serif;
     letter-spacing: 0.5px;
+    font-size: 1.25rem;
 }
 
 a,
 button.nav-link {
     font-family: roboto-lt, sans-serif;
     letter-spacing: 0.75px;
-}
-
-a,
-button.nav-link,
-p {
-    font-size: 1.25rem;
-}
-
-button,
-a.git-link,
-.form-label {
-    font-size: 1.125rem;
 }
 
 .sidebar {

@@ -1,11 +1,11 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {Header} from './Header';
-import About from './About';
-import PortfolioList from './PortfolioList';
+import {About} from './About';
+import {PortfolioList} from './PortfolioList';
 import {list2016} from '../utils/list_2016';
 import {list2017} from '../utils/list_2017';
 import {list2020} from '../utils/list_2020';
-import Modal from './Modal';
+import {Modal} from './Modal';
 import linkedIn from '../styles/images/linkedin.jpg';
 import {MyLink} from './MyLink';
 
@@ -103,8 +103,12 @@ const App: React.FC = () => {
             <Header key="a2" toContact={toContact} toPortfolio={toPortfolio} toTop={toTop} />
             <section key="a3" className="landing container">
                 <article className="about">
-                    <div className="about-container">
-                        <About />
+                    <div className="about-container d-flex align-items-center flex-column">
+                        <div className="row">
+                            <div className="col-12">
+                                <About />
+                            </div>
+                        </div>
                     </div>
                 </article>
 

@@ -186,6 +186,10 @@ button.nav-link {
 
             .about-container {
                 padding: 0;
+
+                .top-box {
+                    min-width: 100%;
+                }
             }
         }
     }
@@ -227,25 +231,17 @@ button.nav-link {
     }
 }
 
-@media screen and (min-width: 569px) and (max-width: 767px) {
-    html {
-        font-size: 14px;
-    }
-
-    .landing {
-        .about {
-            padding-top: 120px;
-
-            .about-container {
-                padding: 0;
-            }
-        }
-    }
-}
-
 /* iPad portrait and iPhone X landscape */
 @media screen and (min-width: 768px) and (max-width: 812px) {
     .landing {
+        .about {
+            .about-container {
+                .top-box {
+                    min-width: 650px;
+                }
+            }
+        }
+
         .portfolio {
             .portfolio-container {
                 margin-left: 15px;
@@ -302,14 +298,14 @@ button.nav-link {
     }
 }
 
-@media screen and (min-width: 1024px) {
-    .mode-icon {
-        margin-right: 8px;
-    }
-}
-
-@media screen and (min-width: 1280px) {
-    .mode-icon {
-        margin-right: 0;
-    }
-}
+//@media screen and (min-width: 1024px) {
+//    .mode-icon {
+//        margin-right: 8px;
+//    }
+//}
+//
+//@media screen and (min-width: 1280px) {
+//    .mode-icon {
+//        margin-right: 0;
+//    }
+//}
