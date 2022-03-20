@@ -98,7 +98,7 @@ export const App: React.FC = () => {
                 <Modal
                     isOpen={isOpen}
                     setIsOpen={setIsOpen}
-                    srcText={target?.dataset.text} // using dataset.text to hold path to full size image
+                    srcText={target?.dataset.text} // holds path to full size image
                     headerText={target?.alt}
                 />
             </span>
@@ -107,7 +107,7 @@ export const App: React.FC = () => {
 
     return (
         <React.Fragment>
-            {showModal()},
+            {showModal()}
             <Header key="a2" toContact={toContact} toPortfolio={toPortfolio} toTop={toTop} />
             <section key="a3" className="landing container">
                 <article className="about">
