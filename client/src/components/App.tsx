@@ -6,7 +6,7 @@ import {list2016} from '../utils/list_2016';
 import {list2017} from '../utils/list_2017';
 import {list2020} from '../utils/list_2020';
 import {Modal} from './Modal';
-import linkedIn from '../styles/images/linkedin.jpg';
+import linkedIn from '../styles/images/linkedIn.png';
 import {MyLink} from './MyLink';
 
 const AppElement: React.FC = ({children}) => {

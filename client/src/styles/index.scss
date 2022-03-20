@@ -66,7 +66,7 @@ ul {
     justify-content: flex-start;
 }
 
-.contact > .row > .col-12.cta {
+.contact > .row > .col-12 > .cta {
     display: flex;
     & >  a.social-link {
         padding-left: 20px;
@@ -99,36 +99,16 @@ h6 {
     body,
     .container-fluid {
         background: $darkBackground;
+        color: $lightFontColor;
         transition: background 0.5s;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4:not(.modal-title),
-    h5,
-    h6,
-    p,
-    label:not(.mode-icon),
-    pre,
-    small,
-    ul > li {
-        color: $lightFontColor;
-    }
-
-    input[type='text'],
-    input[type='email'],
-    textarea.form-control {
-        background: $darkBackground;
-        color: $lightFontColor;
     }
 
     a {
         color: $lightBlue !important;
     }
 
-    .error {
-        color: rgb(253, 131, 109);
+    .mode-icon {
+        color: $fontColor;
     }
 }
 
@@ -136,34 +116,12 @@ body,
 .container-fluid {
     background: $white;
     transition: background 0.5s;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-label,
-pre,
-small,
-ul > li {
     color: $fontColor;
 }
 
 a,
 button.nav-link {
     color: $blueText !important;
-}
-
-.error {
-    color: $red;
-    margin-left: 10px;
-}
-
-.success {
-    color: $blue;
 }
 
 .nav-shadow {
@@ -298,14 +256,14 @@ button.nav-link {
     }
 }
 
-//@media screen and (min-width: 1024px) {
-//    .mode-icon {
-//        margin-right: 8px;
-//    }
-//}
-//
-//@media screen and (min-width: 1280px) {
-//    .mode-icon {
-//        margin-right: 0;
-//    }
-//}
+@media screen and (min-width: 1024px) {
+    .mode-icon {
+        margin-right: 8px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .mode-icon {
+        margin-right: 0;
+    }
+}

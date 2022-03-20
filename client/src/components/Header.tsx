@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import logo from '../styles/images/incubo_logo.png';
 import logoSm from '../styles/images/incubo_logo_sm.png';
-import linkedIn from '../styles/images/linkedin.jpg';
+import linkedIn from '../styles/images/linkedIn.png';
 import {MyLink} from './MyLink';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faMoon, faSun} from '@fortawesome/free-solid-svg-icons';
