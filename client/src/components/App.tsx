@@ -9,7 +9,15 @@ import {Modal} from './Modal';
 import linkedIn from '../styles/images/linkedin.jpg';
 import {MyLink} from './MyLink';
 
-const App: React.FC = () => {
+const AppElement: React.FC = ({children}) => {
+    return (
+        <div className="row">
+            <div className="col-12">{children}</div>
+        </div>
+    );
+};
+
+export const App: React.FC = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [event, setEvent] = useState<React.MouseEvent<HTMLImageElement, MouseEvent> | null>(null);
     const portfolioRef = useRef<HTMLDivElement | null>(null);
@@ -104,28 +112,24 @@ const App: React.FC = () => {
             <section key="a3" className="landing container">
                 <article className="about">
                     <div className="about-container d-flex align-items-center flex-column">
-                        <div className="row">
-                            <div className="col-12">
-                                <About />
-                            </div>
-                        </div>
+                        <AppElement>
+                            <About />
+                        </AppElement>
                     </div>
                 </article>
 
                 <article className="portfolio" ref={portfolioRef} data-testid="portfolio">
                     <div className="header-container">
-                        <div className="row">
-                            <div className="col-12">
-                                <h1>Portfolio</h1>
-                                <a
-                                    href="https://github.com/Nibor808"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    data-testid="github-link">
-                                    github
-                                </a>
-                            </div>
-                        </div>
+                        <AppElement>
+                            <h1>Portfolio</h1>
+                            <a
+                                href="https://github.com/Nibor808"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                data-testid="github-link">
+                                github
+                            </a>
+                        </AppElement>
                     </div>
 
                     <div className="portfolio-container">
@@ -154,13 +158,12 @@ const App: React.FC = () => {
                 </article>
 
                 <article className="contact" ref={contactRef} data-testid="contact">
-                    <div className="row">
-                        <div className="col-12">
-                            <h1>Contact</h1>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-12 cta">
+                    <AppElement>
+                        <h1>Contact</h1>
+                    </AppElement>
+
+                    <AppElement>
+                        <div className="cta">
                             <p>Want to work together? Get in touch!</p>
                             <MyLink
                                 title={<img src={linkedIn} alt="Robin Erickson linkedIn" />}
@@ -168,11 +171,9 @@ const App: React.FC = () => {
                                 klass="social-link"
                             />
                         </div>
-                    </div>
+                    </AppElement>
                 </article>
             </section>
         </React.Fragment>
     );
 };
-
-export default App;

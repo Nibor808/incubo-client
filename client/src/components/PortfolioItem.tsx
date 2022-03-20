@@ -9,7 +9,7 @@ interface PortfolioItemProps {
 export interface Item {
     title: string;
     badgeIcon?: JSX.Element | undefined;
-    github?: MyLink | string | Element | JSX.Element;
+    github?: MyLink | Element | JSX.Element;
     text?: () => JSX.Element[] | JSX.Element;
     image?: (handleClick: React.MouseEventHandler) => Element | JSX.Element;
 }
