@@ -22,12 +22,12 @@ export const About = () => {
     });
 
     useEffect(() => {
-        const timeActive = setInterval(getTime, 1000);
+        const timeActive = setInterval(setTimeForDisplay, 1000);
 
         return () => clearInterval(timeActive);
     }, []);
 
-    const getTime = () => {
+    const setTimeForDisplay = () => {
         const timeSinceStartDate = moment().diff([2016, 0, 1]);
         const activeTime = moment.duration(timeSinceStartDate);
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {MyLink} from './MyLink';
+import {MyLinkProps} from './MyLink';
 
 interface PortfolioItemProps {
     handleClick: React.FormEventHandler;
@@ -9,7 +9,7 @@ interface PortfolioItemProps {
 export interface Item {
     title: string;
     badgeIcon?: JSX.Element | undefined;
-    github?: MyLink | Element | JSX.Element;
+    github?: MyLinkProps | Element | JSX.Element;
     text?: () => JSX.Element[] | JSX.Element;
     image?: (handleClick: React.MouseEventHandler) => Element | JSX.Element;
 }

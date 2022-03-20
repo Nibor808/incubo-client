@@ -90,10 +90,10 @@ export const App: React.FC = () => {
         setEvent(ev);
     };
 
-    const showModal = React.useCallback((): JSX.Element | null => {
+    const showModal = React.useCallback((): JSX.Element => {
         const target = event?.target as HTMLImageElement;
 
-        return isOpen ? (
+        return (
             <span key="a1">
                 <Modal
                     isOpen={isOpen}
@@ -102,12 +102,12 @@ export const App: React.FC = () => {
                     headerText={target?.alt}
                 />
             </span>
-        ) : null;
-    }, [isOpen, event?.target]);
+        );
+    }, [event?.target]);
 
     return (
         <React.Fragment>
-            {showModal()}
+            {isOpen ? showModal() : null}
             <Header key="a2" toContact={toContact} toPortfolio={toPortfolio} toTop={toTop} />
             <section key="a3" className="landing container">
                 <article className="about">

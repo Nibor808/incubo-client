@@ -1,13 +1,6 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 
-export interface ModalProps {
-    isOpen: boolean;
-    setIsOpen: (arg: boolean) => void;
-    headerText: string | undefined;
-    srcText: string | undefined;
-}
-
 const ModalStyle = {
     overlay: {
         position: 'fixed' as 'fixed',
@@ -32,6 +25,13 @@ const ModalStyle = {
         backgroundColor: 'rgb(255,255,255)',
     },
 };
+
+interface ModalProps {
+    isOpen: boolean;
+    setIsOpen: (arg: boolean) => void;
+    headerText: string | undefined;
+    srcText: string | undefined;
+}
 
 export const Modal: React.FC<ModalProps> = ({isOpen, setIsOpen, headerText, srcText}) => {
     return (
