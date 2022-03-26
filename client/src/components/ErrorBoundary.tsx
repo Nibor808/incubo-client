@@ -22,9 +22,9 @@ export class ErrorBoundary extends React.Component<EBProps, EBState> {
     public render() {
         if (this.state.errorInfo) {
             return (
-                <React.Fragment>
+                <>
                     <p className="error">Oops! We broke it. Please try again later.</p>
-                </React.Fragment>
+                </>
             );
         }
 

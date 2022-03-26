@@ -2,12 +2,6 @@
   "AWSEBDockerrunVersion": "2",
   "volumes": [
     {
-      "name": "api",
-      "host": {
-        "sourcePath": "/var/app/current/api"
-      }
-    },
-    {
       "name": "client",
       "host": {
         "sourcePath": "/var/app/current/client"
@@ -29,13 +23,6 @@
       "memory": 128
     },
     {
-      "name": "api",
-      "image": "526452955669.dkr.ecr.ca-central-1.amazonaws.com/incubo-api:latest",
-      "hostName": "api",
-      "essential": false,
-      "memory": 128
-    },
-    {
       "name": "nginx",
       "image": "526452955669.dkr.ecr.ca-central-1.amazonaws.com/incubo-nginx:latest",
       "hostName": "nginx",
@@ -51,7 +38,7 @@
           "containerPort": 8443
         }
       ],
-      "links": ["client", "api"]
+      "links": ["client"]
     }
   ]
 }

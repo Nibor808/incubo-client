@@ -2,9 +2,9 @@ import React, {useEffect, useRef, useState} from 'react';
 import {Header} from './Header';
 import {About} from './About';
 import {PortfolioList} from './PortfolioList';
-import {list2016} from '../utils/list_2016';
-import {list2017} from '../utils/list_2017';
-import {list2020} from '../utils/list_2020';
+import {list2016} from '../portfolio-data/list_2016';
+import {list2017} from '../portfolio-data/list_2017';
+import {list2020} from '../portfolio-data/list_2020';
 import {Modal} from './Modal';
 import linkedIn from '../styles/images/linkedIn.png';
 import {MyLink} from './MyLink';
@@ -106,11 +106,11 @@ export const App: React.FC = () => {
     }, [event?.target]);
 
     return (
-        <React.Fragment>
+        <>
             {isOpen ? showModal() : null}
             <Header key="a2" toContact={toContact} toPortfolio={toPortfolio} toTop={toTop} />
             <section key="a3" className="landing container">
-                <article className="about">
+                <article className="about" data-testid="about">
                     <div className="about-container d-flex align-items-center flex-column">
                         <AppElement>
                             <About />
@@ -174,6 +174,6 @@ export const App: React.FC = () => {
                     </AppElement>
                 </article>
             </section>
-        </React.Fragment>
+        </>
     );
 };
