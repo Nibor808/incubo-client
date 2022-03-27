@@ -3,7 +3,7 @@ import {TimeValues} from '../types';
 
 export const useStats = (time: TimeValues) => {
     return React.useMemo(() => {
-        /* indentation matters here */
+        /* indentation matters here between the back ticks */
         return `<pre>
 var STATS = {
   "location": {

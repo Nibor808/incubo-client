@@ -1,12 +1,11 @@
 import React from 'react';
-import {MyLinkProps} from './components/MyLink';
 
 export interface Item {
     title: string;
     badgeIcon?: React.ReactElement | undefined;
-    github?: MyLinkProps | React.ReactElement;
+    github?: React.ReactElement;
     text?: () => React.ReactElement[] | React.ReactElement;
-    image?: (handleClick?: React.MouseEventHandler) => Element | React.ReactElement;
+    image?: (handleClick?: React.MouseEventHandler) => React.ReactElement;
 }
 
 export interface TimeValues {

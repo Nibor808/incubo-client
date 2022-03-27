@@ -9,6 +9,7 @@ import lakeshore from '../styles/images/lakeshore.jpg';
 import incuboOld from '../styles/images/incubo_old.jpg';
 import {MyLink} from '../components/MyLink';
 import {Item} from '../types';
+import {MouseEventHandler} from 'react';
 
 export const list2017: Item[] = [
     {
@@ -44,7 +45,7 @@ export const list2017: Item[] = [
                 </p>,
             ];
         },
-        image: (handleClick) => {
+        image: (handleClick: MouseEventHandler | undefined) => {
             return (
                 <div className="row">
                     <div className="col">
