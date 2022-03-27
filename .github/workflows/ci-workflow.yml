@@ -114,7 +114,7 @@ jobs:
           aws elasticbeanstalk create-application-version \
           --application-name Incuboweb2022 \
           --version-label "${{ env.VERSION_LABEL }}" \
-          --description "${{ env.VERSION_LABEL }} apppication" \
+          --description "Incuboweb2022App-${{ github.sha }}" \
           --source-bundle S3Bucket="${{ secrets.S3_BUCKET_NAME }}",S3Key="incuboweb2022/${{ env.DEPLOY_PACKAGE_NAME }}"
 
       - name: Deploy New Version To Elastic Beanstalk
