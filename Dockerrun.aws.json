@@ -17,7 +17,7 @@
   "containerDefinitions": [
     {
       "name": "client",
-      "image": "526452955669.dkr.ecr.ca-central-1.amazonaws.com/incubo-client:latest",
+      "image": "526452955669.dkr.ecr.ca-central-1.amazonaws.com/incuboweb2022:latest",
       "hostName": "client",
       "essential": false,
       "memory": 128

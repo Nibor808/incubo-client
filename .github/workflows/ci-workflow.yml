@@ -112,7 +112,7 @@ jobs:
       - name: Creat App Version
         run: |
           aws elasticbeanstalk create-application-version \
-          --application-name Incubo-Client \
+          --application-name incuboweb2022 \
           --version-label "${{ env.VERSION_LABEL }}" \
           --description "${{ env.VERSION_LABEL }}" \
           --source-bundle S3Bucket="${{ secrets.S3_BUCKET_NAME }}",S3Key="incuboweb2022/${{ env.DEPLOY_PACKAGE_NAME }}"
