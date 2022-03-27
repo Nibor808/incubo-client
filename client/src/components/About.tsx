@@ -1,15 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import moment from 'moment';
 import robin from '../styles/images/robin-head.jpeg';
-
-type TimeValues = {
-    years: number;
-    months: number;
-    days: number;
-    hours: number;
-    minutes: number;
-    seconds: number;
-};
+import {useStats} from '../hooks/useStats';
+import {TimeValues} from '../types';
 
 export const About = () => {
     const [time, setTime] = useState<TimeValues>({
@@ -23,7 +16,6 @@ export const About = () => {
 
     useEffect(() => {
         const timeActive = setInterval(setTimeForDisplay, 1000);
-
         return () => clearInterval(timeActive);
     }, []);
 
@@ -41,31 +33,6 @@ export const About = () => {
         });
     };
 
-    const renderInfoDisplay = () => {
-        return `<pre>
-var STATS = {
-  "location": {
-    "province": "Ontario",
-    "country": "Canada",
-  },
-  "time_active": {
-    "years": ${time.years},
-    "months": ${time.months},
-    "days": ${time.days},
-    "hours": ${time.hours},
-    "minutes": ${time.minutes},
-    "seconds": ${time.seconds},
-  },
-  "skills": [
-    "problem_solving",
-    "clean_ui",
-    "clean_code",
-    "collaboration",
-  ]
-};
-      </pre>`;
-    };
-
     return (
         <div className="top-box d-flex align-items-center justify-content-between">
             <div className="d-flex align-items-center flex-column">
@@ -75,7 +42,7 @@ var STATS = {
                 <p>Exploring technology one language at a time.</p>
             </div>
 
-            <span dangerouslySetInnerHTML={{__html: renderInfoDisplay()}} />
+            <span dangerouslySetInnerHTML={{__html: useStats(time)}} />
         </div>
     );
 };

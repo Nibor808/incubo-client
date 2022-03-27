@@ -4,7 +4,7 @@ import plus3Calc from '../styles/images/plus3-calc.jpg';
 import plus3Curr from '../styles/images/plus3-curr.jpg';
 import plus3Units from '../styles/images/plus3-units.jpg';
 import {MyLink} from '../components/MyLink';
-import {Item} from '../components/PortfolioItem';
+import {Item} from '../types';
 
 export const list2016: Item[] = [
     {
@@ -33,16 +33,15 @@ export const list2016: Item[] = [
                 </p>,
             ];
         },
-        image: (handleClick) => {
+        image: () => {
             return (
                 <div className="row">
                     <div className="col">
                         <img
                             src={plus3Calc}
                             data-text={plus3Calc}
-                            className="img-fluid clickable"
+                            className="img-fluid"
                             alt="+3 Calculator"
-                            onClick={(ev) => handleClick(ev)}
                         />
                     </div>
 
@@ -50,9 +49,8 @@ export const list2016: Item[] = [
                         <img
                             src={plus3Curr}
                             data-text={plus3Curr}
-                            className="img-fluid clickable"
+                            className="img-fluid"
                             alt="+3 Currency Converter"
-                            onClick={(ev) => handleClick(ev)}
                         />
                     </div>
 
@@ -60,9 +58,8 @@ export const list2016: Item[] = [
                         <img
                             src={plus3Units}
                             data-text={plus3Units}
-                            className="img-fluid clickable"
+                            className="img-fluid"
                             alt="+3 Units Converter"
-                            onClick={(ev) => handleClick(ev)}
                         />
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import logo from '../styles/images/incubo_logo.png';
 import logoSm from '../styles/images/incubo_logo_sm.png';
 import linkedIn from '../styles/images/linkedIn.png';
@@ -14,9 +14,9 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({toPortfolio, toContact, toTop}) => {
     const [darkMode, setDarkMode] = useState<boolean>(false);
-    const [modeIcon, setModeIcon] = useState<JSX.Element>(<FontAwesomeIcon icon={faSun} />);
+    const [modeIcon, setModeIcon] = useState<React.ReactElement>(<FontAwesomeIcon icon={faSun} />);
     const width = window.innerWidth;
-    const logoImg = width < 768 ? logoSm : logo;
+    const logoImg = useMemo(() => (width < 768 ? logoSm : logo), [width]);
 
     useEffect(() => {
         if (darkMode) {

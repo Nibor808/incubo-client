@@ -8,7 +8,7 @@ import jesstech from '../styles/images/jesstech.jpg';
 import lakeshore from '../styles/images/lakeshore.jpg';
 import incuboOld from '../styles/images/incubo_old.jpg';
 import {MyLink} from '../components/MyLink';
-import {Item} from '../components/PortfolioItem';
+import {Item} from '../types';
 
 export const list2017: Item[] = [
     {
@@ -53,7 +53,7 @@ export const list2017: Item[] = [
                             className="img-fluid clickable"
                             alt="Online Divorce Forms Landing Page"
                             data-text={odfFull}
-                            onClick={(ev) => handleClick(ev)}
+                            onClick={(ev) => !!handleClick && handleClick(ev)}
                         />
                     </div>
 
@@ -63,7 +63,7 @@ export const list2017: Item[] = [
                             className="img-fluid clickable"
                             alt={`Online Divorce Forms User's Forms List`}
                             data-text={odfForms}
-                            onClick={(ev) => handleClick(ev)}
+                            onClick={(ev) => !!handleClick && handleClick(ev)}
                         />
                     </div>
 
@@ -73,7 +73,7 @@ export const list2017: Item[] = [
                             className="img-fluid clickable"
                             alt="Online Divorce Forms Access Scheduler"
                             data-text={odfAccessScheduler}
-                            onClick={(ev) => handleClick(ev)}
+                            onClick={(ev) => !!handleClick && handleClick(ev)}
                         />
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 import {MyLink} from '../components/MyLink';
-import {Item} from '../components/PortfolioItem';
+import {Item} from '../types';
 
 export const list2020: Item[] = [
     {

@@ -1,8 +1,9 @@
 import React from 'react';
-import {Item, PortfolioItem} from './PortfolioItem';
+import {PortfolioItem} from './PortfolioItem';
+import {Item} from '../types';
 
 interface PortfolioListProps {
-    handleClick: React.FormEventHandler;
+    handleClick: React.MouseEventHandler;
     year: string;
     list: Item[];
     sideBarName: string;

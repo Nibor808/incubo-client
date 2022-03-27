@@ -90,7 +90,7 @@ export const App: React.FC = () => {
         setEvent(ev);
     };
 
-    const showModal = React.useCallback((): JSX.Element => {
+    const showModal = React.useCallback((): React.ReactElement => {
         const target = event?.target as HTMLImageElement;
 
         return (
@@ -103,7 +103,7 @@ export const App: React.FC = () => {
                 />
             </span>
         );
-    }, [event?.target]);
+    }, [event?.target, isOpen]);
 
     return (
         <>

@@ -114,6 +114,14 @@ h6 {
     .mode-icon {
         color: $fontColor;
     }
+
+    .img-modal {
+        background-color: $darkBackground;
+
+        .img-modal-content {
+            color: $lightFontColor;
+        }
+    }
 }
 
 body,

@@ -1,17 +1,9 @@
 import React from 'react';
-import {MyLinkProps} from './MyLink';
+import {Item} from '../types';
 
 interface PortfolioItemProps {
-    handleClick: React.FormEventHandler;
+    handleClick: React.MouseEventHandler;
     item: Item;
-}
-
-export interface Item {
-    title: string;
-    badgeIcon?: JSX.Element | undefined;
-    github?: MyLinkProps | Element | JSX.Element;
-    text?: () => JSX.Element[] | JSX.Element;
-    image?: (handleClick: React.MouseEventHandler) => Element | JSX.Element;
 }
 
 export const PortfolioItem: React.FC<PortfolioItemProps> = ({handleClick, item}) => {
