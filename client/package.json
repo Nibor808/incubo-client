@@ -1,5 +1,5 @@
 {
-    "name": "incuboweb2022",
+    "name": "incubo-client",
     "version": "2.0.0",
     "private": true,
     "dependencies": {

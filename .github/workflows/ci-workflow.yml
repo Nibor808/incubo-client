@@ -83,7 +83,7 @@ jobs:
         run: |
           docker build -t incubo-client ./client
           docker tag incubo-client:latest 526452955669.dkr.ecr.ca-central-1.amazonaws.com/incubo-client:latest
-          docker push 526452955669.dkr.ecr.ca-central-1.amazonaws.com/incuboweb2022:latest
+          docker push 526452955669.dkr.ecr.ca-central-1.amazonaws.com/incubo-client:latest
 
       - name: NGINX - Build Tag and Push to ECR
         env:
