@@ -63,13 +63,13 @@ describe('Header', () => {
     });
 
     test('clicking the logo calls toTop', () => {
-        const logoImg = screen.getByTestId('logo-img');
-        expect(logoImg).toBeInTheDocument();
+        const logoLink = screen.getByTestId('logo-link');
+        expect(logoLink).toBeInTheDocument();
 
         expect(toTop).not.toHaveBeenCalled();
 
         fireEvent(
-            logoImg,
+            logoLink,
             new MouseEvent('click', {
                 bubbles: true,
             })

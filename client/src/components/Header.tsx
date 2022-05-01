@@ -9,7 +9,7 @@ import {faMoon, faSun} from '@fortawesome/free-solid-svg-icons';
 interface HeaderProps {
     toPortfolio: (ev: React.MouseEvent<HTMLButtonElement>) => void;
     toContact: (ev: React.MouseEvent<HTMLButtonElement>) => void;
-    toTop: (ev: React.MouseEvent<HTMLImageElement, MouseEvent>) => void;
+    toTop: (ev: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({toPortfolio, toContact, toTop}) => {
@@ -32,10 +32,9 @@ export const Header: React.FC<HeaderProps> = ({toPortfolio, toContact, toTop}) =
         <header>
             <nav className="navbar navbar-expand-lg fixed-top navbar-light">
                 <div className="container">
-                    <a href="#" onClick={() => toTop} className="logo-link">
+                    <a href="#" onClick={toTop} className="logo-link" data-testid="logo-link">
                         <img
                             id="logo-img"
-                            data-testid="logo-img"
                             src={logoImg}
                             alt="incubo web solutions logo"
                             className="img-fluid navbar-brand"
