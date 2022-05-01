@@ -38,6 +38,7 @@ export const Header: React.FC<HeaderProps> = ({toPortfolio, toContact, toTop}) =
                             src={logoImg}
                             alt="incubo web solutions logo"
                             className="img-fluid navbar-brand"
+                            data-testid="logo-img"
                         />
                     </a>
 

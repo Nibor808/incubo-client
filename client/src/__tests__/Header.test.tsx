@@ -62,7 +62,7 @@ describe('Header', () => {
         expect(classList).toContain('dark-mode');
     });
 
-    test('clicking the logo calls toTop', () => {
+    test('clicking the logo link calls toTop', () => {
         const logoLink = screen.getByTestId('logo-link');
         expect(logoLink).toBeInTheDocument();
 
