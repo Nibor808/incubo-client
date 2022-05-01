@@ -56,7 +56,7 @@ export const App: React.FC = () => {
         }
     };
 
-    const toTop = React.useCallback((ev: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
+    const toTop = React.useCallback((ev: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         ev.preventDefault();
 
         setTimeout(() => {
