@@ -1,3 +1,4 @@
+import React from 'react';
 import casemon from '../styles/images/casemon.jpg';
 import appStoreBadge from '../styles/images/appstorebadge.svg';
 import plus3Calc from '../styles/images/plus3-calc.jpg';
@@ -15,7 +16,8 @@ export const list2016: Item[] = [
                 href="https://itunes.apple.com/ca/app/+3/id1095135903?mt=8"
                 target={'_blank'}
                 rel="noopener noreferrer"
-                className="social-link">
+                className="social-link"
+            >
                 <img src={appStoreBadge} id="badge" className="img-fluid" alt="app store badge" />
             </a>
         ),
@@ -75,8 +77,8 @@ export const list2016: Item[] = [
             return [
                 <p key="main1">
                     I was engaged by a start up to develop the MVP for a web app that allows
-                    attorneys to receive notifications via email or text whenever there's an update
-                    to one of their cases.
+                    attorneys to receive notifications via email or text whenever there&lsquo;s an
+                    update to one of their cases.
                 </p>,
                 <p key="main2">
                     The MVP was built on Node JS and CoffeeScript for the backend and HTML5, CSS3

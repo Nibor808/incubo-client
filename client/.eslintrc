@@ -1,6 +1,6 @@
 {
     "env": {
-        "node": true,
+        "browser": true,
         "es6": true,
         "commonjs": true,
         "jest": true
@@ -13,14 +13,15 @@
         "prettier"
     ],
     "globals": {
-        "__dirname": false,
-        "$": false,
-        "console": false,
-        "document": false,
-        "module": false,
-        "require": false,
-        "NodeJS": true,
-        "JSX": true,
+        "__dirname": "readonly",
+        "$": "readonly",
+        "console": "readonly",
+        "document": "writeable",
+        "module": "readonly",
+        "require": "readonly",
+        "NodeJS": "writeable",
+        "JSX": "writeable",
+        "window": "writeable",
     },
     "overrides": [
         {
@@ -29,7 +30,7 @@
         }
     ],
     "parserOptions": {
-        "ecmaVersion": 10,
+        "ecmaVersion": "latest",
         "sourceType": "module",
         "ecmaFeatures": {
             "jsx": true
@@ -61,12 +62,8 @@
             {
                 "devDependencies": [
                     "**/*.{,*.}{mock,test,spec,stories,images}.{t,j}s{,x}",
-                    "**/__mock{,s}__/**",
-                    "**/__msw-mocks__/**",
-                    "**/__storybook{,s}__/**",
                     "**/__test{,s}__/**",
                     "**/{config,build}/**",
-                    "dangerfile.ts"
                 ]
             }
         ],
@@ -87,7 +84,6 @@
         "no-useless-return": 1,
         "no-undef": 1,
         "eol-last": [2, "always"],
-        "no-restricted-globals": [2, "document"],
         "no-restricted-syntax": 0,
         "prefer-arrow-callback": 1,
         "brace-style": [2, "1tbs", {"allowSingleLine": true}],
@@ -123,7 +119,7 @@
             "@typescript-eslint/parser": [".ts", ".tsx"]
         },
         "import/resolver": {
-            "typescript": {"extensions": [".ts", ".tsx", ".js"]},
+            "typescript": {},
             "node": {"extensions": [".js", ".jsx", ".json", ".ts", ".tsx"]}
         },
         "react": {

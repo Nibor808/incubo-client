@@ -1,3 +1,4 @@
+import React from 'react';
 import odfFullThumb from '../styles/images/odf-full-thumb.jpg';
 import odfFull from '../styles/images/odf-full.jpg';
 import odfFormsThumb from '../styles/images/odf-forms-thumb.jpg';
@@ -49,33 +50,57 @@ export const list2017: Item[] = [
             return (
                 <div className="row">
                     <div className="col">
-                        <img
-                            src={odfFullThumb}
-                            className="img-fluid clickable"
-                            alt="Online Divorce Forms Landing Page"
-                            data-text={odfFull}
-                            onClick={(ev) => !!handleClick && handleClick(ev)}
-                        />
+                        <a
+                            href="#"
+                            onClick={(ev) => {
+                                ev.preventDefault();
+                                return !!handleClick && handleClick(ev);
+                            }}
+                            className="list-link"
+                        >
+                            <img
+                                src={odfFullThumb}
+                                className="img-fluid clickable"
+                                alt="Online Divorce Forms Landing Page"
+                                data-text={odfFull}
+                            />
+                        </a>
                     </div>
 
                     <div className="col">
-                        <img
-                            src={odfFormsThumb}
-                            className="img-fluid clickable"
-                            alt={`Online Divorce Forms User's Forms List`}
-                            data-text={odfForms}
-                            onClick={(ev) => !!handleClick && handleClick(ev)}
-                        />
+                        <a
+                            href="#"
+                            onClick={(ev) => {
+                                ev.preventDefault();
+                                return !!handleClick && handleClick(ev);
+                            }}
+                            className="list-link"
+                        >
+                            <img
+                                src={odfFormsThumb}
+                                className="img-fluid clickable"
+                                alt={`Online Divorce Forms User's Forms List`}
+                                data-text={odfForms}
+                            />
+                        </a>
                     </div>
 
                     <div className="col">
-                        <img
-                            src={odfAccessSchedulerThumb}
-                            className="img-fluid clickable"
-                            alt="Online Divorce Forms Access Scheduler"
-                            data-text={odfAccessScheduler}
-                            onClick={(ev) => !!handleClick && handleClick(ev)}
-                        />
+                        <a
+                            href="#"
+                            onClick={(ev) => {
+                                ev.preventDefault();
+                                return !!handleClick && handleClick(ev);
+                            }}
+                            className="list-link"
+                        >
+                            <img
+                                src={odfAccessSchedulerThumb}
+                                className="img-fluid clickable"
+                                alt="Online Divorce Forms Access Scheduler"
+                                data-text={odfAccessScheduler}
+                            />
+                        </a>
                     </div>
                 </div>
             );

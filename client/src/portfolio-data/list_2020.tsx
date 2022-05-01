@@ -1,3 +1,4 @@
+import React from 'react';
 import {MyLink} from '../components/MyLink';
 import {Item} from '../types';
 

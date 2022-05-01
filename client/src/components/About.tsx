@@ -4,7 +4,7 @@ import robin from '../styles/images/robin-head.jpeg';
 import {useStats} from '../hooks/useStats';
 import {TimeValues} from '../types';
 
-export const About = () => {
+export const About: React.FC = () => {
     const [time, setTime] = useState<TimeValues>({
         years: 0,
         months: 0,
@@ -13,11 +13,6 @@ export const About = () => {
         minutes: 0,
         seconds: 0,
     });
-
-    useEffect(() => {
-        const timeActive = setInterval(setTimeForDisplay, 1000);
-        return () => clearInterval(timeActive);
-    }, []);
 
     const setTimeForDisplay = () => {
         const timeSinceStartDate = moment().diff([2016, 0, 1]);
@@ -33,6 +28,11 @@ export const About = () => {
         });
     };
 
+    useEffect(() => {
+        const timeActive = setInterval(setTimeForDisplay, 1000);
+        return () => clearInterval(timeActive);
+    }, []);
+
     return (
         <div className="top-box d-flex align-items-center justify-content-between">
             <div className="d-flex align-items-center flex-column">
@@ -42,6 +42,7 @@ export const About = () => {
                 <p>Exploring technology one language at a time.</p>
             </div>
 
+            {/* eslint-disable-next-line react/no-danger */}
             <span dangerouslySetInnerHTML={{__html: useStats(time)}} />
         </div>
     );

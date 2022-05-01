@@ -1,9 +1,9 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "baseUrl": "src/",
+        "experimentalDecorators": true,
         "lib": ["dom", "dom.iterable", "esnext"],
         "allowJs": true,
-        "skipLibCheck": true,
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
         "strict": true,
@@ -14,7 +14,17 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
-        "jsx": "react-jsx"
+        "jsx": "react",
+        "noImplicitAny": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "pretty": true,
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "target": "ES2021",
+        "strictPropertyInitialization": false,
+        "useUnknownInCatchVariables": false
     },
-    "include": ["src"]
+    "include": ["src"],
+    "exclude": ["__tests__", "__test__", "node_modules"]
 }

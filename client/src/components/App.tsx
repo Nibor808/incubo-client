@@ -9,7 +9,7 @@ import {Modal} from './Modal';
 import linkedIn from '../styles/images/linkedIn.png';
 import {MyLink} from './MyLink';
 
-const AppElement: React.FC = ({children}) => {
+const AppElement: React.FC<{children: React.ReactNode}> = ({children}) => {
     return (
         <div className="row">
             <div className="col-12">{children}</div>
@@ -126,7 +126,8 @@ export const App: React.FC = () => {
                                 href="https://github.com/Nibor808"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                data-testid="github-link">
+                                data-testid="github-link"
+                            >
                                 github
                             </a>
                         </AppElement>
