@@ -16,9 +16,11 @@ describe('Renders Components', () => {
         expect(about).toBeInTheDocument();
     });
 
-    test('renders logo image', () => {
+    test('renders logo image and link', () => {
         const logoImage = screen.getByTestId('logo-img');
+        const logoLink = screen.getByTestId('logo-link');
         expect(logoImage).toBeInTheDocument();
+        expect(logoLink).toBeInTheDocument();
     });
 
     test('renders portfolio article', () => {
