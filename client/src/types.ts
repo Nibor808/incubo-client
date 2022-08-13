@@ -2,7 +2,6 @@ import React from 'react';
 
 export interface Item {
     title: string;
-    badgeIcon?: React.ReactElement | undefined;
     github?: React.ReactElement;
     text?: () => React.ReactElement[] | React.ReactElement;
     image?: (handleClick?: React.MouseEventHandler) => React.ReactElement;

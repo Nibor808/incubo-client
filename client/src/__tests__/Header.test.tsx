@@ -11,6 +11,10 @@ test('renders the Header component', () => {
 });
 
 describe('Header', () => {
+    const click: MouseEvent = new MouseEvent('click', {
+        bubbles: true,
+    });
+
     beforeEach(() => {
         render(<Header toPortfolio={toPortfolio} toContact={toContact} toTop={toTop} />);
     });
@@ -22,9 +26,7 @@ describe('Header', () => {
 
         fireEvent(
             portfolioLink,
-            new MouseEvent('click', {
-                bubbles: true,
-            })
+            click
         );
 
         expect(toPortfolio).toHaveBeenCalled();
@@ -37,9 +39,7 @@ describe('Header', () => {
 
         fireEvent(
             contactLink,
-            new MouseEvent('click', {
-                bubbles: true,
-            })
+            click
         );
 
         expect(toContact).toHaveBeenCalled();
@@ -54,9 +54,7 @@ describe('Header', () => {
 
         fireEvent(
             darkModeToggle,
-            new MouseEvent('click', {
-                bubbles: true,
-            })
+            click
         );
 
         expect(classList).toContain('dark-mode');
@@ -70,9 +68,7 @@ describe('Header', () => {
 
         fireEvent(
             logoLink,
-            new MouseEvent('click', {
-                bubbles: true,
-            })
+            click
         );
 
         expect(toTop).toHaveBeenCalled();

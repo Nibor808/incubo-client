@@ -7,7 +7,7 @@ interface PortfolioItemProps {
 }
 
 export const PortfolioItem: React.FC<PortfolioItemProps> = ({handleClick, item}) => {
-    const {title, badgeIcon, github, text, image} = item;
+    const {title, github, text, image} = item;
 
     return (
         <div className="portfolio-item">
@@ -18,7 +18,6 @@ export const PortfolioItem: React.FC<PortfolioItemProps> = ({handleClick, item})
                 {github ? github : null}
             </div>
 
-            {badgeIcon ? badgeIcon : null}
             {text ? text() : null}
             {image ? image(handleClick) : null}
         </div>
