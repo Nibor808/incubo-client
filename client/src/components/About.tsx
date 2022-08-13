@@ -4,6 +4,12 @@ import robin from '../styles/images/robin-head.jpeg';
 import {useStats} from '../hooks/useStats';
 import {TimeValues} from '../types';
 
+export const myInfo = {
+    name: 'Robin Erickson',
+    title: 'software developer',
+    blurb: 'Exploring technology one language at a time.'
+}
+
 export const About: React.FC = () => {
     const [time, setTime] = useState<TimeValues>({
         years: 0,
@@ -36,10 +42,10 @@ export const About: React.FC = () => {
     return (
         <div className="top-box d-flex align-items-center justify-content-between">
             <div className="d-flex align-items-center flex-column">
-                <img src={robin} alt="me" height="350px" width="350px" className="img-fluid" />
-                <h2>Robin Erickson</h2>
-                <p>software developer</p>
-                <p>Exploring technology one language at a time.</p>
+                <img src={robin} alt="Robin Erickson" height="350px" width="350px" className="img-fluid" />
+                <h2>{myInfo.name}</h2>
+                <p>{myInfo.title}</p>
+                <p>{myInfo.blurb}</p>
             </div>
 
             {/* eslint-disable-next-line react/no-danger */}

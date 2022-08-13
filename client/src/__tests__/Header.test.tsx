@@ -5,16 +5,15 @@ import React from 'react';
 const toPortfolio = jest.fn();
 const toContact = jest.fn();
 const toTop = jest.fn();
+const click: MouseEvent = new MouseEvent('click', {
+    bubbles: true,
+});
 
 test('renders the Header component', () => {
     render(<Header toPortfolio={toPortfolio} toContact={toContact} toTop={toTop} />);
 });
 
 describe('Header', () => {
-    const click: MouseEvent = new MouseEvent('click', {
-        bubbles: true,
-    });
-
     beforeEach(() => {
         render(<Header toPortfolio={toPortfolio} toContact={toContact} toTop={toTop} />);
     });
