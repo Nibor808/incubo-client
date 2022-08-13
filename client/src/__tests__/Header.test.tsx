@@ -9,7 +9,7 @@ const click: MouseEvent = new MouseEvent('click', {
     bubbles: true,
 });
 
-test('renders the Header component', () => {
+test('renders the Header component without error', () => {
     render(<Header toPortfolio={toPortfolio} toContact={toContact} toTop={toTop} />);
 });
 
@@ -23,10 +23,7 @@ describe('Header', () => {
         expect(portfolioLink).toBeInTheDocument();
         expect(toPortfolio).not.toHaveBeenCalled();
 
-        fireEvent(
-            portfolioLink,
-            click
-        );
+        fireEvent(portfolioLink, click);
 
         expect(toPortfolio).toHaveBeenCalled();
     });
@@ -36,10 +33,7 @@ describe('Header', () => {
         expect(contactLink).toBeInTheDocument();
         expect(toContact).not.toHaveBeenCalled();
 
-        fireEvent(
-            contactLink,
-            click
-        );
+        fireEvent(contactLink, click);
 
         expect(toContact).toHaveBeenCalled();
     });
@@ -51,10 +45,7 @@ describe('Header', () => {
         const classList = document.body.classList;
         expect(classList).not.toContain('dark-mode');
 
-        fireEvent(
-            darkModeToggle,
-            click
-        );
+        fireEvent(darkModeToggle, click);
 
         expect(classList).toContain('dark-mode');
     });
@@ -65,10 +56,7 @@ describe('Header', () => {
 
         expect(toTop).not.toHaveBeenCalled();
 
-        fireEvent(
-            logoLink,
-            click
-        );
+        fireEvent(logoLink, click);
 
         expect(toTop).toHaveBeenCalled();
     });

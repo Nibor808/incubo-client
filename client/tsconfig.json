@@ -23,7 +23,8 @@
         "sourceMap": true,
         "target": "ES2021",
         "strictPropertyInitialization": false,
-        "useUnknownInCatchVariables": false
+        "useUnknownInCatchVariables": false,
+        "strictNullChecks": true
     },
     "include": ["src"],
     "exclude": ["__tests__", "__test__", "node_modules"]

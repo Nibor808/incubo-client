@@ -11,6 +11,11 @@ describe('Renders Components', () => {
         render(<App />);
     });
 
+    test('renders the Header', () => {
+        const header = screen.getByTestId('header');
+        expect(header).toBeInTheDocument();
+    });
+
     test('renders about article', () => {
         const about = screen.getByTestId('about');
         expect(about).toBeInTheDocument();

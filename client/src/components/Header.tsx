@@ -29,7 +29,7 @@ export const Header: React.FC<HeaderProps> = ({toPortfolio, toContact, toTop}) =
     }, [darkMode]);
 
     return (
-        <header>
+        <header data-testid="header">
             <nav className="navbar navbar-expand-lg fixed-top navbar-light">
                 <div className="container">
                     <a href="#" onClick={toTop} className="logo-link" data-testid="logo-link">
@@ -49,8 +49,7 @@ export const Header: React.FC<HeaderProps> = ({toPortfolio, toContact, toTop}) =
                         data-bs-target="#content"
                         aria-controls="content"
                         aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
+                        aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon" />
                     </button>
 
@@ -61,8 +60,7 @@ export const Header: React.FC<HeaderProps> = ({toPortfolio, toContact, toTop}) =
                                     type="button"
                                     className="nav-link"
                                     onClick={toPortfolio}
-                                    data-testid="portfolio-link"
-                                >
+                                    data-testid="portfolio-link">
                                     Portfolio
                                 </button>
                             </li>
@@ -71,8 +69,7 @@ export const Header: React.FC<HeaderProps> = ({toPortfolio, toContact, toTop}) =
                                     type="button"
                                     className="nav-link"
                                     onClick={toContact}
-                                    data-testid="contact-link"
-                                >
+                                    data-testid="contact-link">
                                     Contact
                                 </button>
                             </li>
@@ -97,8 +94,7 @@ export const Header: React.FC<HeaderProps> = ({toPortfolio, toContact, toTop}) =
                                 />
                                 <label
                                     className="form-check-label mode-icon"
-                                    htmlFor="dark-light-toggle"
-                                >
+                                    htmlFor="dark-light-toggle">
                                     {modeIcon}
                                 </label>
                             </div>
