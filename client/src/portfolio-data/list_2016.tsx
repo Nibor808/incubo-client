@@ -21,7 +21,7 @@ export const list2016: Item[] = [
                 <p key="main3">
                     Just for fun I added in a units converter as well as an API driven currency
                     converter. +3 was built using xcode and the swift programming language. *Due to
-                    time constraints and well life, +3 is no longer available in the app store.
+                    time constraints, and well life, +3 is no longer available in the app store.
                 </p>,
             ];
         },
