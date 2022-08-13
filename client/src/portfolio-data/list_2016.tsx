@@ -15,13 +15,13 @@ export const list2016: Item[] = [
                 <p key="main1">
                     My wife had requested that I build her an app to solve a specific need she had
                     at work. A calculator that allowed you to display calculations as you went, add
-                    notes to any line and send it as an email. *Due to time constraints and well life,
-                    +3 is no longer available in the app store.
+                    notes to any line and send it as an email.
                 </p>,
                 <p key="main2">+3 was born.</p>,
                 <p key="main3">
                     Just for fun I added in a units converter as well as an API driven currency
-                    converter. +3 was built using xcode and the swift programming language.
+                    converter. +3 was built using xcode and the swift programming language. *Due to
+                    time constraints and well life, +3 is no longer available in the app store.
                 </p>,
             ];
         },
