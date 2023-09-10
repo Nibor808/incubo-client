@@ -8,6 +8,7 @@ import {list2020} from '../portfolio-data/list_2020';
 import {Modal} from './Modal';
 import linkedIn from '../styles/images/linkedIn.png';
 import {MyLink} from './MyLink';
+import {resizeImage} from '../utils/resizeImage';
 
 const AppElement: React.FC<{children: React.ReactNode}> = ({children}) => {
     return (
@@ -18,6 +19,7 @@ const AppElement: React.FC<{children: React.ReactNode}> = ({children}) => {
 };
 
 export const App: React.FC = () => {
+    const width = window.innerWidth;
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const [event, setEvent] = useState<React.MouseEvent<HTMLImageElement, MouseEvent> | null>(null);
     const portfolioRef = useRef<HTMLDivElement | null>(null);
@@ -29,31 +31,7 @@ export const App: React.FC = () => {
     }, []);
 
     window.onscroll = () => {
-        const width = window.innerWidth;
-
-        if (logoImg) {
-            if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
-                document.body.classList.add('nav-shadow');
-
-                if (width < 768) {
-                    logoImg.style.height = '70px';
-                    logoImg.style.width = '165px';
-                } else {
-                    logoImg.style.height = '80px';
-                    logoImg.style.width = '185px';
-                }
-
-                logoImg.style.transition = '0.4s';
-            } else if (width < 768) {
-                logoImg.style.height = '85px';
-                logoImg.style.width = '200px';
-                document.body.classList.remove('nav-shadow');
-            } else {
-                logoImg.style.height = '110px';
-                logoImg.style.width = '258px';
-                document.body.classList.remove('nav-shadow');
-            }
-        }
+        setLogoImg(resizeImage({image: logoImg, windowWidth: width}));
     };
 
     const toTop = React.useCallback((ev: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {

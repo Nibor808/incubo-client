@@ -1,26 +1,29 @@
-export const resizeImage = (image: HTMLElement | null) => {
-    const width = window.innerWidth;
+import {ImageWidths, ResizeImageProps} from '../types';
+
+export const resizeImage = (props: ResizeImageProps) => {
+    const {image, windowWidth} = props;
 
     if (image) {
+        // show the shadow under the nav
         if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
             document.body.classList.add('nav-shadow');
 
-            if (width < 768) {
-                image.style.height = '70px';
-                image.style.width = '165px';
+            if (windowWidth < 768) {
+                image.style.height = ImageWidths.xSmall.height;
+                image.style.width = ImageWidths.xSmall.width;
             } else {
-                image.style.height = '80px';
-                image.style.width = '185px';
+                image.style.height = ImageWidths.Small.height;
+                image.style.width = ImageWidths.Small.width;
             }
 
             image.style.transition = '0.4s';
-        } else if (width < 768) {
-            image.style.height = '85px';
-            image.style.width = '200px';
+        } else if (windowWidth < 768) {
+            image.style.height = ImageWidths.Medium.height;
+            image.style.width = ImageWidths.Medium.width;
             document.body.classList.remove('nav-shadow');
         } else {
-            image.style.height = '110px';
-            image.style.width = '258px';
+            image.style.height = ImageWidths.Large.height;
+            image.style.width = ImageWidths.Large.width;
             document.body.classList.remove('nav-shadow');
         }
     }

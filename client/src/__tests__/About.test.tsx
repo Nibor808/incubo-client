@@ -2,7 +2,7 @@ import React from 'react';
 import {render, screen} from '@testing-library/react';
 import {About, myInfo} from '../components/About';
 
-describe("<About />", () => {
+describe('<About />', () => {
     beforeEach(() => render(<About />));
 
     test('it should render the image and info', () => {
@@ -11,4 +11,4 @@ describe("<About />", () => {
         expect(screen.getByText(myInfo.title)).toBeInTheDocument();
         expect(screen.getByText(myInfo.blurb)).toBeInTheDocument();
     });
-})
+});
