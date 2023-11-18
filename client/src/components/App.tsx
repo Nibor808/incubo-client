@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {Header} from './Header';
 import {About} from './About';
 import {PortfolioList} from './PortfolioList';
@@ -9,6 +9,7 @@ import {Modal} from './Modal';
 import linkedIn from '../styles/images/linkedIn.png';
 import {MyLink} from './MyLink';
 import {resizeImage} from '../utils/resizeImage';
+import {usePrevious} from '../utils/usePrevious';
 
 const AppElement: React.FC<{children: React.ReactNode}> = ({children}) => {
     return (
@@ -24,15 +25,29 @@ export const App: React.FC = () => {
     const [event, setEvent] = useState<React.MouseEvent<HTMLImageElement, MouseEvent> | null>(null);
     const portfolioRef = useRef<HTMLDivElement | null>(null);
     const contactRef = useRef<HTMLDivElement | null>(null);
-    const [logoImg, setLogoImg] = useState<HTMLElement | null>(null);
+    const [pageOffset, setPageOffset] = useState<number>(0);
+    const previousPageOffset = usePrevious(pageOffset);
+
+    const scrollHandler = useCallback(() => {
+        setPageOffset(window.scrollY);
+        const img = document.getElementById('logo-img') as HTMLImageElement;
+
+        if (pageOffset !== previousPageOffset) {
+            resizeImage({image: img, windowWidth: width});
+        }
+    }, [width, pageOffset]);
 
     useEffect(() => {
-        setLogoImg(document.getElementById('logo-img'));
-    }, []);
+        const scroller = () => {
+            window.addEventListener('scroll', scrollHandler);
+        };
 
-    window.onscroll = () => {
-        setLogoImg(resizeImage({image: logoImg, windowWidth: width}));
-    };
+        scroller();
+
+        return () => {
+            window.removeEventListener('scroll', scroller);
+        };
+    }, []);
 
     const toTop = React.useCallback((ev: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         ev.preventDefault();
@@ -104,8 +119,7 @@ export const App: React.FC = () => {
                                 href="https://github.com/Nibor808"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                data-testid="github-link"
-                            >
+                                data-testid="github-link">
                                 github
                             </a>
                         </AppElement>

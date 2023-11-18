@@ -12,7 +12,7 @@ describe('resizeImage', () => {
         const {height, width} = ImageWidths.Medium;
         const {getByTestId} = render(<TestComponent />);
 
-        const image = getByTestId('test-image');
+        const image = getByTestId('test-image') as HTMLImageElement;
         expect(image).toBeInTheDocument();
         expect(image).toHaveAttribute('style');
         expect(image.getAttribute('style')).toEqual('height: 10px; width: 10px;');
@@ -25,7 +25,7 @@ describe('resizeImage', () => {
         const {height, width} = ImageWidths.Large;
         const {getByTestId} = render(<TestComponent />);
 
-        const image = getByTestId('test-image');
+        const image = getByTestId('test-image') as HTMLImageElement;
         expect(image).toBeInTheDocument();
         expect(image).toHaveAttribute('style');
         expect(image.getAttribute('style')).toEqual('height: 10px; width: 10px;');
@@ -34,11 +34,11 @@ describe('resizeImage', () => {
         expect(image.getAttribute('style')).toEqual(`height: ${height}; width: ${width};`);
     });
 
-    it('should return an xSmall Image if scolling on a screen < 786px', () => {
+    it('should return an xSmall Image if scrolling on a screen < 786px', () => {
         const {height, width} = ImageWidths.xSmall;
         const {getByTestId} = render(<TestComponent />);
 
-        const image = getByTestId('test-image');
+        const image = getByTestId('test-image') as HTMLImageElement;
         expect(image).toBeInTheDocument();
         expect(image).toHaveAttribute('style');
         expect(image.getAttribute('style')).toEqual('height: 10px; width: 10px;');
@@ -47,15 +47,15 @@ describe('resizeImage', () => {
 
         resizeImage({image, windowWidth: 100});
         expect(image.getAttribute('style')).toEqual(
-            `height: ${height}; width: ${width}; transition: 0.4s;`
+            `height: ${height}; width: ${width}; transition: all 400ms ease-in-out;`
         );
     });
 
-    it('should return a Small Image if scolling', () => {
+    it('should return a Small Image if scrolling', () => {
         const {height, width} = ImageWidths.Small;
         const {getByTestId} = render(<TestComponent />);
 
-        const image = getByTestId('test-image');
+        const image = getByTestId('test-image') as HTMLImageElement;
         expect(image).toBeInTheDocument();
         expect(image).toHaveAttribute('style');
         expect(image.getAttribute('style')).toEqual('height: 10px; width: 10px;');
@@ -64,7 +64,7 @@ describe('resizeImage', () => {
 
         resizeImage({image, windowWidth: 800});
         expect(image.getAttribute('style')).toEqual(
-            `height: ${height}; width: ${width}; transition: 0.4s;`
+            `height: ${height}; width: ${width}; transition: all 400ms ease-in-out;`
         );
     });
 

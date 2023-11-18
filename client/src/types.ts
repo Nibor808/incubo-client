@@ -48,6 +48,6 @@ export const ImageWidths: Record<string, Image> = {
 };
 
 export interface ResizeImageProps {
-    image: HTMLElement | null;
+    image: HTMLImageElement | null;
     windowWidth: number;
 }
