@@ -11,6 +11,19 @@ import {MyLink} from './MyLink';
 import {resizeImage} from '../utils/resizeImage';
 import {usePrevious} from '../utils/usePrevious';
 
+const executeScroll = (
+    ev: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement, MouseEvent>,
+    ref?: React.MutableRefObject<HTMLDivElement | null>
+) => {
+    ev.preventDefault();
+
+    ref && ref.current
+        ? ref.current?.scrollIntoView({
+              behavior: 'smooth',
+          })
+        : window.scrollTo(0, 0);
+};
+
 const AppElement: React.FC<{children: React.ReactNode}> = ({children}) => {
     return (
         <div className="row">
@@ -49,34 +62,6 @@ export const App: React.FC = () => {
         };
     }, []);
 
-    const toTop = React.useCallback((ev: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-        ev.preventDefault();
-
-        setTimeout(() => {
-            window.scrollTo(0, 0);
-        }, 50);
-    }, []);
-
-    const toPortfolio = React.useCallback((ev: React.MouseEvent<HTMLButtonElement>) => {
-        ev.preventDefault();
-
-        setTimeout(() => {
-            portfolioRef.current?.scrollIntoView({
-                behavior: 'smooth',
-            });
-        }, 75);
-    }, []);
-
-    const toContact = React.useCallback((ev: React.MouseEvent<HTMLButtonElement>) => {
-        ev.preventDefault();
-
-        setTimeout(() => {
-            contactRef.current?.scrollIntoView({
-                behavior: 'smooth',
-            });
-        }, 75);
-    }, []);
-
     const handleClick = (ev: React.MouseEvent<HTMLImageElement>) => {
         setIsOpen(true);
         ev.persist();
@@ -87,7 +72,7 @@ export const App: React.FC = () => {
         const target = event?.target as HTMLImageElement;
 
         return (
-            <span key="a1">
+            <span key="modal-1">
                 <Modal
                     isOpen={isOpen}
                     setIsOpen={setIsOpen}
@@ -101,8 +86,17 @@ export const App: React.FC = () => {
     return (
         <>
             {isOpen ? showModal() : null}
-            <Header key="a2" toContact={toContact} toPortfolio={toPortfolio} toTop={toTop} />
-            <section key="a3" className="landing container">
+            <Header
+                key="header-1"
+                toContact={(ev: React.MouseEvent<HTMLButtonElement>) =>
+                    executeScroll(ev, contactRef)
+                }
+                toPortfolio={(ev: React.MouseEvent<HTMLButtonElement>) =>
+                    executeScroll(ev, portfolioRef)
+                }
+                toTop={(ev: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => executeScroll(ev)}
+            />
+            <section key="about-3" className="landing container">
                 <article className="about" data-testid="about">
                     <div className="about-container d-flex align-items-center flex-column">
                         <AppElement>

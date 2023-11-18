@@ -10,7 +10,7 @@ export const list2016: Item[] = [
     {
         title: '+3',
         github: <MyLink title="git" href="https://github.com/Nibor808/plus3" klass="git-link" />,
-        text: () => {
+        renderText: () => {
             return [
                 <p key="main1">
                     My wife had requested that I build her an app to solve a specific need she had
@@ -25,7 +25,7 @@ export const list2016: Item[] = [
                 </p>,
             ];
         },
-        image: () => {
+        renderImage: () => {
             return (
                 <div className="row">
                     <div className="col">
@@ -63,12 +63,12 @@ export const list2016: Item[] = [
         github: (
             <MyLink title="git" href="https://github.com/Nibor808/casemon-mvp" klass="git-link" />
         ),
-        text: () => {
+        renderText: () => {
             return [
                 <p key="main1">
                     I was engaged by a start up to develop the MVP for a web app that allows
-                    attorneys to receive notifications via email or text whenever there&lsquo;s an
-                    update to one of their cases.
+                    attorneys to receive notifications via email or renderText whenever
+                    there&lsquo;s an update to one of their cases.
                 </p>,
                 <p key="main2">
                     The MVP was built on Node JS and CoffeeScript for the backend and HTML5, CSS3
@@ -80,6 +80,6 @@ export const list2016: Item[] = [
                 </p>,
             ];
         },
-        image: () => <img src={casemon} className="img-fluid" alt="Casemon Landing Page" />,
+        renderImage: () => <img src={casemon} className="img-fluid" alt="Casemon Landing Page" />,
     },
 ];

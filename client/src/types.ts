@@ -3,8 +3,8 @@ import React from 'react';
 export interface Item {
     title: string;
     github?: React.ReactElement;
-    text?: () => React.ReactElement[] | React.ReactElement;
-    image?: (handleClick?: React.MouseEventHandler) => React.ReactElement;
+    renderText?: () => React.ReactElement[] | React.ReactElement;
+    renderImage?: (handleClick?: React.MouseEventHandler) => React.ReactElement;
 }
 
 export interface TimeValues {

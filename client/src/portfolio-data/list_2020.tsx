@@ -8,7 +8,7 @@ export const list2020: Item[] = [
         github: (
             <MyLink title="git" href="https://github.com/Nibor808/go-starter" klass="git-link" />
         ),
-        text: () => {
+        renderText: () => {
             return [
                 <p key="main1">
                     Recently I have become more interested in the Go programming language. The code

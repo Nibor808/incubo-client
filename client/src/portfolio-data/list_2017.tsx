@@ -15,7 +15,7 @@ import {MouseEventHandler} from 'react';
 export const list2017: Item[] = [
     {
         title: 'Online Divorce Forms',
-        text: () => {
+        renderText: () => {
             return [
                 <p key="main1">
                     <MyLink title="ODF" href="https://www.onlinedivorceforms.ca/" /> is a service
@@ -46,7 +46,7 @@ export const list2017: Item[] = [
                 </p>,
             ];
         },
-        image: (handleClick: MouseEventHandler | undefined) => {
+        renderImage: (handleClick: MouseEventHandler | undefined) => {
             return (
                 <div className="row">
                     <div className="col">
@@ -56,8 +56,7 @@ export const list2017: Item[] = [
                                 ev.preventDefault();
                                 return !!handleClick && handleClick(ev);
                             }}
-                            className="list-link"
-                        >
+                            className="list-link">
                             <img
                                 src={odfFullThumb}
                                 className="img-fluid clickable"
@@ -74,8 +73,7 @@ export const list2017: Item[] = [
                                 ev.preventDefault();
                                 return !!handleClick && handleClick(ev);
                             }}
-                            className="list-link"
-                        >
+                            className="list-link">
                             <img
                                 src={odfFormsThumb}
                                 className="img-fluid clickable"
@@ -92,8 +90,7 @@ export const list2017: Item[] = [
                                 ev.preventDefault();
                                 return !!handleClick && handleClick(ev);
                             }}
-                            className="list-link"
-                        >
+                            className="list-link">
                             <img
                                 src={odfAccessSchedulerThumb}
                                 className="img-fluid clickable"
@@ -111,7 +108,7 @@ export const list2017: Item[] = [
         github: (
             <MyLink title="git" href="https://github.com/Nibor808/jess-blog" klass="git-link" />
         ),
-        text: () => {
+        renderText: () => {
             return [
                 <p key="main1">
                     A for fun project to learn React/Redux. JessTech is a database driven blog site
@@ -128,11 +125,11 @@ export const list2017: Item[] = [
                 </p>,
             ];
         },
-        image: () => <img src={jesstech} className="img-fluid" alt="Jesstech Landing Page" />,
+        renderImage: () => <img src={jesstech} className="img-fluid" alt="Jesstech Landing Page" />,
     },
     {
         title: 'Lakeshore Electric',
-        text: () => (
+        renderText: () => (
             <p>
                 I was approached by an electrical contractor to increase their business potential
                 through a web presence. They envisioned a straight brochure style site to illustrate
@@ -141,19 +138,21 @@ export const list2017: Item[] = [
                 CSS3 and jQuery. (no longer active)
             </p>
         ),
-        image: () => (
+        renderImage: () => (
             <img src={lakeshore} className="img-fluid" alt="Lakeshore Electric Landing Page" />
         ),
     },
     {
         title: 'Incubo Web Solutions',
         github: <MyLink title="git" href="https://github.com/Nibor808/incubo" klass="git-link" />,
-        text: () => (
+        renderText: () => (
             <p>
                 The old Incubo site. The black and white design was complimented by colourising the
                 link squares on rollover. Built on Node JS with HTML5, Handlebars, CSS3, and jQuery.
             </p>
         ),
-        image: () => <img src={incuboOld} className="img-fluid" alt="Old Incubo Landing Page" />,
+        renderImage: () => (
+            <img src={incuboOld} className="img-fluid" alt="Old Incubo Landing Page" />
+        ),
     },
 ];
